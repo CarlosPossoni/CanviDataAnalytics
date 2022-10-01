@@ -5,20 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <title>Institucional</title>
 </head>
 
 <body>
     <div class="body2">
         <main>
+            <header>
+                <img class="logo" src="../assests/LOGO_f_verdex.jpg" alt="Logo">
+                <ul class="navbar">
+                    <li><a href="../login/login.html">Login</a></li>
+                    <li><a href="../cadastro/cadastro.html">Cadastro</a></li>
+                </ul>
+            </header>
             <section class="module parallax parallax-1">
                 <h1>Canvi Data Analytics</h1>
             </section>
 
             <section class="module content">
                 <div class="container">
-                    <h3>O quem somos?</h3>
+                    <h3>Quem somos?</h3>
                     <h4>Uma empresa de monitoramento!
                     </h4>
                     <p>A Canvi Data Analytics é uma empresa de monitoramento de umidade e temperatura em agronegócios de
@@ -34,7 +44,7 @@
 
             <section class="module content">
                 <div class="container">
-                    <h4>Garantimos aproveitamento de 20%
+                    <h4>Garantimos um aproveitamento de 20%
                     </h4>
                     <p>Sabemos que a parte mais importante da plantação é fase da brotação, <span>60%</span> dela é
                         garantida, se houver uma boa umidade/temperatura. O que faz com que a aereção do solo seja
@@ -51,15 +61,15 @@
             <section class="module content">
                 <div class="container">
                     <h4>Calcule o novo ganho!</h4>
-                    Informe a porcentagem de brotos que se desenvolvem no hectare: <input class="input" type="text"
-                        placeholder="99%" id="ipt_porcentagem" autofocus>
+                    Informe a porcentagem de brotos que se desenvolvem por Hectare: <input class="input" type="number"
+                        placeholder="99%" id="ipt_porcentagem">
                     <br>
                     <br>
-                    Informe o faturamento do hectare: <input class="input" type="text" placeholder="R$9999,99"
+                    Informe o faturamento do hectare: <input class="input" type="number" placeholder="R$9999,99"
                         id="ipt_faturamento">
                     <br>
                     <br>
-                    Informe o número de hectares: <input class="input" type="text" id="ipt_hectares">
+                    Informe o número de hectares: <input class="input" type="number" id="ipt_hectares">
                     <br>
                     <br>
                     <button class="button1" onclick="calc()">Calcule o novo rendimento</button>
@@ -68,7 +78,7 @@
                     </div>
                 </div>
             </section>
-
+            <footer>Todos os direitos reservados ©</footer>
         </main>
     </div>
 
@@ -89,12 +99,12 @@
 
         if (porcentagem >= 80) {
             div_msg.innerHTML = `
-            <div style="border: solid 3px #4B5C29;padding: 10px 10px 10px 10px; background-color:#f2f2f2;color:white">
+            <div style="padding: 10px 10px 10px 10px; background-color:#f2f2f2;color:#000">
             
             <h2>A Canvi Data Analytics tem um comprimsso com você!</h2>
             
             <p>Seu Canavial tem uma ótima porcentagem de desenvolvimento, e nós vamos te ajudar a manter essa porcentagem.<br>
-            Vamos te ajudar a manter o seu faturamento alto!<br>
+            Conosco seu faturamento estará sempre alto!<br>
             Se interessou? Entre em contato!</p>
             
             <br><button>Fale Conosco</button>
@@ -122,4 +132,8 @@
         }
     }
 
+    window.addEventListener('scroll', function () {
+        var menu = document.querySelector('header');
+        menu.classList.toggle('flex', window.scrollY > 450);
+    })
 </script>
